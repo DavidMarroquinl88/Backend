@@ -65,6 +65,27 @@ namespace System.Master.Loyalty.Group.Data
             builder.Entity<ApplicationUser>(b =>
             {
                 b.ToTable("Users");
+
+                b.HasData(
+                    new ApplicationUser()
+                    {
+                        Id = 1,
+                        Apellidos = "David Marroquín López",
+                        Nombre = "David",
+                        Direccion = "Conocido",
+                        Status = Status.Create,
+                        CreatedDate = DateTime.Now,
+                        UserName = "davidmarroquinl88@gmail.com",
+                        NormalizedUserName = "DAVIDMARROQUINL88@GMAIL.COM",
+                        Email = "davidmarroquinl88@gmail.com",
+                        NormalizedEmail = "DAVIDMARROQUINL88@GMAIL.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = "AQAAAAIAAYagAAAAEID7UGBbg04KModCwrOgHytkPh4OWE9Hwyg99Jo7e0kVm8hJryJ0+8szcv730oSgGQ==",
+                        SecurityStamp = "FMKTDO4VIXEHP4VKXEQTSFPAXYJL5V2H",
+                        ConcurrencyStamp = "06da3772-0af0-4292-8c7e-b558664db71d",
+                        LockoutEnabled = true
+                    }
+                    );
             });
 
             builder.Entity<ApplicationRol>(b =>
@@ -80,6 +101,12 @@ namespace System.Master.Loyalty.Group.Data
             builder.Entity<IdentityUserRole<int>>(b =>
             {
                 b.ToTable("UserRoles");
+
+                b.HasData(new IdentityUserRole<int>
+                {
+                    RoleId = 2,
+                    UserId = 1
+                });
             });
 
             builder.Entity<IdentityUserClaim<int>>(b =>
@@ -104,7 +131,7 @@ namespace System.Master.Loyalty.Group.Data
             #endregion
 
         }
-  
+
 
 
     }
