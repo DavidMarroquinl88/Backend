@@ -1,0 +1,6 @@
+@System.Master.Loyalty.Group.Front_HostAddress = http://localhost:5279
+
+GET {{System.Master.Loyalty.Group.Front_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
